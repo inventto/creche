@@ -18,6 +18,7 @@ class MatriculasControllerTest < ActionController::TestCase
 
   test "should create matricula" do
     assert_difference('Matricula.count') do
+      @matricula.destroy
       post :create, matricula: { aluno_id: @matricula.aluno_id, ano_letivo: @matricula.ano_letivo, data: @matricula.data, turma_id: @matricula.turma_id }
     end
 
