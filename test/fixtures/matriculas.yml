@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  aluno_id: 
-  turma_id: 
-  ano_letivo: 1
+  aluno_id: 1
+  turma_id: 1
+  ano_letivo: 2014
   data: 2014-04-13 10:54:14
 
 two:
-  aluno_id: 
-  turma_id: 
-  ano_letivo: 1
+  aluno_id: 2
+  turma_id: 1
+  ano_letivo: 2014
   data: 2014-04-13 10:54:14

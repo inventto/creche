@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  nome: MyString
-  professora: MyString
-  professora_auxiliar: MyString
+  nome: Jardim 1
+  professora: Adriele
+  professora_auxiliar: Maria
 
 two:
-  nome: MyString
-  professora: MyString
-  professora_auxiliar: MyString
+  nome: Jardim 2
+  professora: Maria
+  professora_auxiliar: Paula
