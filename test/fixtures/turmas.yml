@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   nome: Jardim 1
   professora: Adriele
   professora_auxiliar: Maria
 
 two:
+  id: 2
   nome: Jardim 2
   professora: Maria
   professora_auxiliar: Paula

@@ -18,7 +18,7 @@ class TurmasControllerTest < ActionController::TestCase
 
   test "should create turma" do
     assert_difference('Turma.count') do
-      post :create, turma: { nome: @turma.nome, professora: @turma.professora, professora_auxiliar: @turma.professora_auxiliar }
+      post :create, turma: { nome: "Jardim 3", professora: "Ana Lucia", professora_auxiliar: "Maria Lucia" }
     end
 
     assert_redirected_to turma_path(assigns(:turma))
