@@ -4,6 +4,7 @@
 
 $('.tabs li a').each ->
   $(@).click ->
+    $(".tab").tab("hide")
     $(@).tab("show")
-    $(".tab-content > div").hide()
-    $("#"+$(@).attr("data-toggle")).show()
+    $(".tab-pane").hide()
+    $(@).next().append($("#"+$(@).attr("data-toggle")).show())

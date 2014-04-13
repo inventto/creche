@@ -4,14 +4,13 @@
 .small {
   width: 32px;
   height: 32px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
-ul > li.list-inline {
-  float: right;
+ul.alunos {
+   list-style-type: none;
 }
 .aluno{
   margin-top: 15px;
   font-size: 16px;
-  width: 180px;
-
+  width: 160px;
 }
