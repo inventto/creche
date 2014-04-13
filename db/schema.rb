@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20140413154734) do
   end
 
   create_table "diarios", force: true do |t|
-    t.string   "nome"
-    t.text     "modelo"
+    t.integer  "aluno_id"
+    t.string   "agiu"
+    t.string   "como"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -9,3 +9,10 @@ $('.tabs li a').each ->
     $(@).tab("show")
     $(".tab-pane").hide()
     $(@).next().append($("#"+$(@).attr("data-toggle")).show())
+$("input[type=radio]").each ->
+  $(@).click ->
+    aluno_id = $(@).parents("ul[data-id]").attr("data-id")
+    opts = {type: 'POST'}
+    opts.name = $(@).attr("name")
+    opts.value = $(@).attr("value")
+    $.ajax "/diario/info/#{aluno_id}", opts

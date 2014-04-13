@@ -9,4 +9,13 @@ class AlunoTest < ActiveSupport::TestCase
       Aluno.create!(nome: "")
     end
   end
+  test "atualiza informacao" do
+    @aluno = alunos(:one)
+    assert_difference "Diario.count" do
+      @aluno.hoje!("dormiu", "bem")
+    end
+    assert_no_difference "Diario.count" do
+      @aluno.hoje!("dormiu", "bem")
+    end
+  end
 end

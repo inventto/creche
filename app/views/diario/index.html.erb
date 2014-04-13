@@ -2,8 +2,8 @@
 <% @turmas.each do |turma| %>
   <h3><%= turma.nome %></h3>
     <% turma.alunos.each do |aluno|  %>
-      <ul class="nav tabs nav-tabs list-inline alunos" data-tabs="tab-content">
-         <li data-id=<%= aluno.id %> class="active aluno"><%= aluno.nome  %></li>
+      <ul data-id=<%= aluno.id %>  class="nav tabs nav-tabs list-inline alunos" data-tabs="tab-content">
+         <li class="active aluno"><%= aluno.nome  %></li>
           <% NO_DIARIO_VERIFICA.each do |opcao| %>
             <li >
               <a href="#<%= ideize(opcao)  %>" data-toggle="<%= ideize(opcao)  %>">

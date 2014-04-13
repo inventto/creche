@@ -1,10 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  nome: Alimentação
-  modelo: alimentacao
-
-
-two:
-  nome: Sono
-  modelo:
+  aluno_id: 1
+  agiu: Almoço
+  como: Bem
