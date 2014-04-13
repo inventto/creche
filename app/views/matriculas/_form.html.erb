@@ -1,0 +1,32 @@
+<%= form_for @matricula, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :aluno_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :aluno_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :turma_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :turma_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ano_letivo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ano_letivo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :data, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :data, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                matriculas_path, :class => 'btn' %>
+  </div>
+<% end %>
