@@ -2,4 +2,23 @@
 
 <% @turmas.each do |turma| %>
   <h3><%= turma.nome %></h3>
+  <ul>
+    <% turma.alunos.each do |aluno|  %>
+      <li data-id=<%= aluno.id %> class="aluno"><span class="nome_aluno"><%= aluno.nome  %></span>
+
+        <ul class="nav tabs nav-tabs" data-tabs="tab-content">
+          <% NO_DIARIO_VERIFICA.each do |opcao| %>
+            <li><a href="#" data-toggle="<%= ideize(opcao)  %>"><span class="glyphicon glyphicon-star"></span><%= opcao %></a> </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+    <div class="tab-content">
+  <% NO_DIARIO_VERIFICA.each do |painel|  %>
+    <div class="tab-pane" id="<%= ideize(painel)  %>">
+      <%= render :partial => ideize(painel) %>
+    </div>
+  <% end  %>
+    </div>
 <% end  %>

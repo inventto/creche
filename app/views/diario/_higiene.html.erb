@@ -1,0 +1,33 @@
+<h2>Higiene</h2>
+<table title="Higiene" border=1 class="table table-striped">
+  <thead>
+  <th>
+    <td>Sim</td>
+    <td>Não</td>
+    <td>Vezes</td>
+  </th>
+  </thead>
+  <tbody>
+    <% HIGIENE.each do |higiene| %>
+    <tr>
+      <td><%= higiene %></td>
+      <% prefix = higiene.downcase.remover_acentos.gsub(/ - | /,"_") %>
+      <% %w(Sim Não).each do |aceitacao| %>
+        <td><%= radio_button_tag prefix, aceitacao %></td>
+      <% end %>
+      <td><%= select_tag "#{prefix}_vezes" , options_for_select((1..10).to_a), style: "width: auto" %>
+    </tr>
+    <% end %>
+    <tr>
+      <td>Como evacuou</td>
+      <% COMO_EVACUOU.each do |tipo| %>
+        <td>
+          <%= label_tag "higiene_evacuou_#{tipo}", tipo.camelcase  %>
+          <%= radio_button_tag "higiene_evacuou", tipo %>
+        </td>
+      <% end  %>
+    </tr>
+  </th>
+  </thead>
+  </tbody>
+</table>

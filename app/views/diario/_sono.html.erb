@@ -1,0 +1,21 @@
+<h2>Sono</h2>
+<table title="Sono" border=1 class="table table-striped">
+  <thead>
+    <tr>
+      <td></td>
+      <% COMO_DORMIU.each do |tipo|  %>
+        <td><%= tipo %></td>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% HORARIOS_SONO.each do |horario|  %>
+      <tr>
+        <td><%= horario  %></td>
+        <% COMO_DORMIU.each do |tipo| %>
+          <td><%= radio_button_tag ideize(horario), ideize(tipo) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,19 @@
+<h2>Alimentação</h2>
+<table title="Alimentação" border=1 class="table table-striped">
+  <thead>
+  <th>
+    <td><%= COMO_SE_ALIMENTOU.join("</td><td>").html_safe  %></td>
+  </th>
+  </thead>
+  <tbody>
+    <% ALIMENTACAO.each do |alimentacao| %>
+    <tr>
+      <td><%= alimentacao %></td>
+      <% prefix = ideize(alimentacao)%>
+      <% COMO_SE_ALIMENTOU.each do |aceitacao| %>
+        <td><%= radio_button_tag prefix, aceitacao %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
