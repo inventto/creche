@@ -1,24 +1,24 @@
 <h1>Diário</h1>
-
 <% @turmas.each do |turma| %>
   <h3><%= turma.nome %></h3>
-  <ul>
     <% turma.alunos.each do |aluno|  %>
-      <li data-id=<%= aluno.id %> class="aluno"><span class="nome_aluno"><%= aluno.nome  %></span>
-
-        <ul class="nav tabs nav-tabs" data-tabs="tab-content">
+        <ul class="nav tabs nav-tabs list-inline" data-tabs="tab-content">
+          <li data-id=<%= aluno.id %> class="active aluno"><%= aluno.nome  %></li>
           <% NO_DIARIO_VERIFICA.each do |opcao| %>
-            <li><a href="#" data-toggle="<%= ideize(opcao)  %>"><span class="glyphicon glyphicon-star"></span><%= opcao %></a> </li>
+            <li >
+              <a href="#<%= ideize(opcao)  %>" data-toggle="<%= ideize(opcao)  %>">
+                <%= image_tag  ideize(opcao)+".png", class: "small" %>
+              </a>
+            </li>
           <% end %>
-        </ul>
-      </li>
+        </ul></span>
     <% end %>
   </ul>
-    <div class="tab-content">
-  <% NO_DIARIO_VERIFICA.each do |painel|  %>
-    <div class="tab-pane" id="<%= ideize(painel)  %>">
-      <%= render :partial => ideize(painel) %>
-    </div>
-  <% end  %>
-    </div>
+  <div class="tab-content">
+    <% NO_DIARIO_VERIFICA.each do |painel|  %>
+      <div class="tab-pane" id="<%= ideize(painel)  %>">
+        <%= render :partial => ideize(painel) %>
+      </div>
+    <% end  %>
+  </div>
 <% end  %>
