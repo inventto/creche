@@ -4,6 +4,7 @@
 
 $('.tabs li a').each ->
   $(@).click ->
+    $("input[type=radio]:checked").attr("checked",null)
     $(".tab").tab("hide")
     $(@).tab("show")
     $(".tab-pane").hide()
