@@ -3,6 +3,7 @@ class Aluno < ActiveRecord::Base
   has_many :diarios
   has_many :matriculas
   has_many :turmas, through: :matriculas
+  scope :sem_matricula, -> { where("id not in (select aluno_id from matriculas)") }
 
 
   def hoje! em, agiu, como

@@ -12,10 +12,10 @@ class AlunoTest < ActiveSupport::TestCase
   test "atualiza informacao" do
     @aluno = alunos(:one)
     assert_difference "Diario.count" do
-      @aluno.hoje!("dormiu", "bem")
+      @aluno.hoje!("sono", "dormiu", "bem")
     end
     assert_no_difference "Diario.count" do
-      @aluno.hoje!("dormiu", "bem")
+      @aluno.hoje!("sono", "dormiu", "bem")
     end
   end
 end
