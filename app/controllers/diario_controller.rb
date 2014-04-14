@@ -3,7 +3,6 @@ class DiarioController < ApplicationController
     @turmas = Turma.all
   end
   def info
-    p params
     @aluno = Aluno.find(params[:aluno_id])
     respond_to do |format|
       if info = @aluno.hoje!(params[:em], params[:agiu], params[:como])
@@ -13,4 +12,9 @@ class DiarioController < ApplicationController
       end
     end
   end
+  def impressao
+    @turmas = Diario.de_hoje.group_by(&:turma)
+    render "impressao", layout: "impressao"
+  end
 end
+
