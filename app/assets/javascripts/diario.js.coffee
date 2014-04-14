@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
 $('.tabs li a').each ->
   $(@).click ->
     $("input[type=radio]:checked").attr("checked",null)
@@ -12,6 +13,7 @@ $('.tabs li a').each ->
 
 updateInfo = ->
   aluno_id = $(@).parents("ul[data-id]").attr("data-id")
+  return if aluno_id is undefined or aluno_id is null
   self = $(@)
   self.parent().append "<img src='assets/loading.png' alt='loading'/>"
   toggleOk = ->
@@ -33,4 +35,3 @@ updateInfo = ->
 
 $("input[type=radio]").on "click", updateInfo
 $("select").on "change", updateInfo
-
