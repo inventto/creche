@@ -3,7 +3,7 @@ ALIMENTACAO = [
   "Lanche 2 - manhã",
   "Almoço",
   "Lanche 1 - tarde",
-  "Lanche 2 - manhã"
+  "Lanche 2 - tarde"
 ]
 COMO_SE_ALIMENTOU  = %w(Bem Pouco Recusou)
 

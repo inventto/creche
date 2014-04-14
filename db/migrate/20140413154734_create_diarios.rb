@@ -2,7 +2,7 @@ class CreateDiarios < ActiveRecord::Migration
   def up
     create_table :diarios do |t|
       t.references :aluno
-      t.string :agiu, :como
+      t.string :em, :agiu, :como
 
       t.timestamps
     end

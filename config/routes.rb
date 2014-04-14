@@ -1,5 +1,6 @@
 Creche::Application.routes.draw do
   get "diario/index"
+  post "diario/info/:aluno_id" => "diario#info"
   resources :matriculas
 
   resources :turmas

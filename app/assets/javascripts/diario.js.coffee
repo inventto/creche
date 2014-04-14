@@ -9,10 +9,15 @@ $('.tabs li a').each ->
     $(@).tab("show")
     $(".tab-pane").hide()
     $(@).next().append($("#"+$(@).attr("data-toggle")).show())
-$("input[type=radio]").each ->
-  $(@).click ->
-    aluno_id = $(@).parents("ul[data-id]").attr("data-id")
-    opts = {type: 'POST'}
-    opts.name = $(@).attr("name")
-    opts.value = $(@).attr("value")
-    $.ajax "/diario/info/#{aluno_id}", opts
+
+updateInfo = ->
+  aluno_id = $(@).parents("ul[data-id]").attr("data-id")
+  opts =
+    em: $(@).parents("div.tab-pane").attr("id")
+    name: $(@).attr("name")
+    value: $(@).attr("value") || $(@).val()
+  $.ajax "/diario/info/#{aluno_id}", type: 'POST', data: opts
+
+$("input[type=radio]").on "click", updateInfo
+$("select").on "change", updateInfo
+

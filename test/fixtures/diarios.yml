@@ -2,5 +2,6 @@
 
 one:
   aluno_id: 1
+  em: "Alimentação"
   agiu: Almoço
   como: Bem

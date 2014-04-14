@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140413154734) do
 
   create_table "diarios", force: true do |t|
     t.integer  "aluno_id"
+    t.string   "em"
     t.string   "agiu"
     t.string   "como"
     t.datetime "created_at"
