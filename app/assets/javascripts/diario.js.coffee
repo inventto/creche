@@ -15,17 +15,21 @@ updateInfo = ->
   self = $(@)
   self.parent().append "<img src='assets/loading.png' alt='loading'/>"
   toggleOk = ->
-    console.log( self.parent().find("img").get(0))
     image = self.parent().find("img")
     image.attr('src',"assets/ok.png")
-    hideImage = -> image.remove()
-    setTimeout(hideImage, 3000)
+    removeOk = -> image.remove()
+    setTimeout(removeOk, 3000)
+  toggleError = ->
+    image = self.parent().find("img")
+    image.attr('src',"assets/error.png")
+    removeError = -> image.remove()
+    setTimeout(removeError, 10000)
 
   opts =
     em: self.parents("div.tab-pane").attr("id")
-    name: self.attr("name")
-    value: self.attr("value") || $(@).val()
-  $.ajax "/diario/info/#{aluno_id}", type: 'POST', data: opts, success: toggleOk
+    agiu: self.attr("name")
+    como: self.attr("value") || $(@).val()
+  $.ajax "/diario/info/#{aluno_id}", type: 'POST', data: opts, success: toggleOk, error: toggleError
 
 $("input[type=radio]").on "click", updateInfo
 $("select").on "change", updateInfo
