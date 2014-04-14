@@ -1,13 +1,15 @@
 <% @turmas.each do |turma, diarios|  %>
   <h2><%= turma.nome  %> </h2>
   <% diarios.group_by(&:aluno).each do |aluno, _diarios|  %>
-    <h3> <%= aluno  %> </h3>
-    <% _diarios.group_by(&:em).each do |em, __diarios|  %>
-      <h4><%= unideize(em)  %></h4>
-      <%  __diarios.each do |diario| %>
-        <%= unideize(diario.agiu)  %> : <%= unideize(diario.como)  %><br />
-      <% end %>
-    <% end  %>
+    <div class="aluno">
+      <h3> <%= aluno  %> </h3>
+      <% _diarios.group_by(&:em).each do |em, __diarios|  %>
+        <h4><%= unideize(em)  %></h4>
+        <%  __diarios.each do |diario| %>
+          <%= unideize(diario.agiu)  %> : <%= unideize(diario.como)  %><br />
+        <% end %>
+      <% end  %>
+    </div>
   <% end  %>
   <hr class="page-break" />
 <% end  %>
