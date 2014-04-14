@@ -9,7 +9,7 @@
       <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:professora) %></th>
       <th><%= model_class.human_attribute_name(:professora_auxiliar) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:alunos) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= turma.nome %></td>
         <td><%= turma.professora %></td>
         <td><%= turma.professora_auxiliar %></td>
-        <td><%=l turma.created_at %></td>
+        <th><%= turma.alunos.count %></th>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_turma_path(turma), :class => 'btn btn-mini' %>

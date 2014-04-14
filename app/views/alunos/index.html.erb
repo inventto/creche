@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:nome) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:turma) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +16,11 @@
       <tr>
         <td><%= link_to aluno.id, aluno_path(aluno) %></td>
         <td><%= aluno.nome %></td>
-        <td><%=l aluno.created_at %></td>
+        <td>
+          <% if turma=aluno.turma %>
+            <%= link_to turma.to_s, turmas_path(turma)  %>
+          <% end  %>
+        </td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_aluno_path(aluno), :class => 'btn btn-mini' %>

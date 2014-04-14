@@ -135,6 +135,12 @@ pt_BR:
       create: Criar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
+    links:
+      destroy: Remover
+      edit: Editar
+      new: Cadastrar
+      cancel: Cancelar"
+      back: Voltar
   number:
     currency:
       format:
